@@ -200,7 +200,7 @@ nav ul li a img {
 
 /* Стиль для раздела Обо мне */
 .about-text {
-    font-family: 'Brush Script MT', cursive; /* Выбираем курсивный шрифт */
+    font-family: Arial, sans-serif;
     font-size: 1.2rem;
     color: #333; /* Цвет текста */
     line-height: 1.6; /* Межстрочное расстояние для улучшения читаемости */
@@ -286,6 +286,84 @@ html {
     opacity: 1;
     visibility: visible;
 }
+
+
+/* Общий медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
+    /* Общие настройки для всей страницы */
+    body {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    /* Заголовки и секции */
+    h1, h2 {
+        font-size: 1.5rem; /* Уменьшаем размер заголовков */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Уменьшаем размер текста в главной секции */
+    }
+
+    /* Верхнее меню */
+    nav ul {
+        flex-direction: column; /* Размещаем пункты меню вертикально */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Отступы между пунктами меню */
+    }
+
+    /* Кнопка "Вверх" */
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    /* Раздел "Обо мне" */
+    .about-text {
+        font-size: 1rem; /* Уменьшаем размер текста */
+        padding: 0 10px;
+    }
+
+    /* Контакты */
+    .contact-info {
+        bottom: 10px;
+        left: 10px;
+        font-size: 0.9rem; /* Уменьшаем размер текста для контактов */
+    }
+
+    /* Логотип внизу страницы */
+    .footer-logo {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .footer-logo img {
+        width: 100px; /* Уменьшаем размер логотипа */
+        height: auto;
+    }
+
+    /* Кнопка бронирования */
+    .booking-button {
+        padding: 10px 20px;
+        font-size: 1rem; /* Уменьшаем размер текста на кнопке */
+    }
+
+    /* Секции сайта */
+    .home-section, .services-section, .contact-section {
+        padding: 20px 10px; /* Уменьшаем внутренние отступы в секциях */
+    }
+
+    /* Изображения и элементы внутри секций */
+    .service-cards img {
+        width: 80%; /* Уменьшаем размер изображений */
+        margin: 0 auto;
+    }
+}
+
 
 
 /* Подвал */
