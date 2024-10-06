@@ -1,0 +1,298 @@
+/* Сброс базовых стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Фон и стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Светло-серый цвет для общего фона */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Навигационное меню */
+nav {
+    background-color: #444; /* Темный фон для меню */
+    padding: 30px; /* Увеличиваем отступы для высоты меню */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 25px; /* Увеличиваем отступы между пунктами меню */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: bold;
+    font-size: 1.4rem; /* Увеличиваем размер шрифта */
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a img {
+    width: 40px; /* Увеличиваем размер иконок */
+    height: 40px;
+    margin-right: 15px; /* Увеличиваем отступ между иконкой и текстом */
+    display: inline-block; /* Обеспечиваем отображение иконок */
+}
+
+
+
+
+/* Главная страница */
+.home-section {
+    position: relative; /* Устанавливаем относительное позиционирование для секции */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Высота секции равна высоте экрана */
+    background-image: url('images/massage-table-background.jpg'); /* Фоновое изображение */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+/* Контейнер для кнопки бронирования */
+.booking-button-container {
+    position: absolute; /* Абсолютное позиционирование кнопки внутри секции */
+    top: 10%; /* Располагаем кнопку ниже верхнего меню */
+    left: 50%; /* Центрируем кнопку по горизонтали */
+    transform: translateX(-50%); /* Корректируем центрирование */
+}
+
+/* Кнопка бронирования */
+.booking-button {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0); /* Градиентный фон для кнопки */
+    color: #fff; /* Цвет текста */
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Стили для кнопки при наведении */
+.booking-button:hover {
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+}
+
+
+/* Стили для текста на главной странице */
+.hero {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 20%; /* Располагаем текст на трети экрана */
+    left: 50%; /* Центрируем текст по горизонтали */
+    transform: translateX(-50%); /* Корректируем позицию по горизонтали для центрирования */
+}
+
+.home-section h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Тень для текста */
+    margin-bottom: 20px;
+}
+
+.home-section p {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Тень для текста */
+    max-width: 800px; /* Ограничивает ширину абзаца для лучшей читаемости */
+}
+
+}
+
+/* Виды массажа */
+.services-section {
+    padding: 50px 20px;
+    background-color: rgb(201, 194, 178); /* Устанавливаем цвет фона из изображения */
+    text-align: center;
+    border-radius: 15px; /* Скругляем углы секции */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Добавляем тень для объема */
+    margin: 20px; /* Добавляем отступы вокруг секции */
+    color: #fff; /* Белый цвет текста для лучшей видимости на фоне */
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    color: #006994; /* Цвет текста заголовка */
+    margin-bottom: 20px;
+    text-align: center; /* Центрирование заголовка */
+}
+
+
+
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Стили для карточек массажа */
+.service-card {
+    width: 30%;
+    background-color: transparent; /* Убираем фон у карточек */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для изображений */
+.service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень для плавного перехода */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Добавляем плавный эффект при наведении */
+}
+
+.service-card img:hover {
+    transform: scale(1.05); /* Легкое увеличение изображения при наведении для визуального эффекта */
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    color: #006994;
+    margin-bottom: 10px;
+}
+
+
+/* Бронирование времени */
+.book-section {
+    padding: 50px 20px;
+    background-color: #e6f7ff;
+    text-align: center;
+}
+
+.book-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Обо мне */
+.about-section {
+    padding: 50px 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Стиль для раздела Обо мне */
+.about-text {
+    font-family: 'Brush Script MT', cursive; /* Выбираем курсивный шрифт */
+    font-size: 1.2rem;
+    color: #333; /* Цвет текста */
+    line-height: 1.6; /* Межстрочное расстояние для улучшения читаемости */
+    padding: 0 20px; /* Добавляем отступы по бокам */
+}
+
+/* Контакты */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+    position: relative; /* Устанавливаем относительное позиционирование для секции */
+    min-height: 200px; /* Минимальная высота для размещения контента */
+}
+
+/* Контактная информация в нижнем левом углу */
+.contact-info {
+    position: absolute;
+    bottom: 20px; /* Отступ от нижнего края секции */
+    left: 20px; /* Отступ от левого края */
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #006994;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Логотип в нижнем правом углу */
+.footer-logo {
+    position: absolute;
+    bottom: 20px; /* Отступ от нижнего края секции */
+    right: 20px; /* Отступ от правого края */
+}
+
+.footer-logo img {
+    width: 150px; /* Увеличиваем размер логотипа */
+    height: auto;
+    opacity: 0.8; /* Легкая прозрачность */
+    transition: opacity 0.3s;
+}
+
+.footer-logo img:hover {
+    opacity: 1;
+}
+
+/* Плавный скролл */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Кнопка "Вверх" */
+.scroll-to-top {
+    position: fixed; /* Фиксированное положение */
+    bottom: 30px; /* Отступ от нижнего края */
+    right: 30px; /* Отступ от правого края */
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #006994; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 0; /* Изначально скрыта */
+    visibility: hidden; /* Изначально невидима */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Плавный переход */
+    z-index: 1000; /* Устанавливаем высокий z-index для кнопки */
+}
+
+/* Кнопка "Вверх" видима */
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* Подвал */
+footer {
+    background-color: #444;
+    text-align: center;
+    padding: 10px;
+    color: #f5f5f5;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}

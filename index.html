@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Waves</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Кнопка "Вверх" -->
+<button id="scrollToTopBtn" class="scroll-to-top">↑</button>
+
+<!-- Вставка JavaScript в HTML -->
+<script>
+// Получаем кнопку
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+// Отслеживаем прокрутку страницы
+window.onscroll = function() {
+    toggleScrollToTopBtn();
+};
+
+// Функция для отображения или скрытия кнопки
+function toggleScrollToTopBtn() {
+    if (window.scrollY > 300) { // Показываем кнопку, если прокрутка более 300px
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+}
+
+// Прокрутка к началу страницы при нажатии на кнопку
+scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>
+
+
+
+
+	
+    <!-- Навигационное меню -->
+<nav>
+    <ul>
+        <li><a href="#home"><img src="images/button_background/wave_icon.jpeg" alt="Home Icon"> Home</a></li>
+        <li><a href="#services"><img src="images/button_background/wave_icon.jpeg" alt="Services Icon"> Massage Types</a></li>
+        <li><a href="#about"><img src="images/button_background/wave_icon.jpeg" alt="About Icon"> About Me</a></li>
+        <li><a href="#contact"><img src="images/button_background/wave_icon.jpeg" alt="Contact Icon"> Contact</a></li>
+    </ul>
+</nav>
+
+
+
+
+    <!-- Главная страница -->
+<section id="home" class="home-section">
+    <!-- Кнопка бронирования под верхним меню, но выше цитат -->
+    <div class="booking-button-container">
+        <a href="https://harmony-waves.planway.com" class="booking-button" target="_blank">Book a Session</a>
+    </div>
+    
+    <div class="hero">
+        <h1>Harmony Waves</h1>
+        <p>"Find your inner peace and balance through the art of massage."</p>
+        <p>"Every touch brings you closer to tranquility."</p>
+    </div>
+</section>
+
+
+    <!-- Виды массажа -->
+<section id="services" class="services-section">
+    <h2>Massage Types</h2>
+    <div class="service-cards">
+        <div class="service-card">
+            <img src="images/button_background.jpg" alt="Relaxing Massage">
+            <h3>Relaxing Massage</h3>
+            <p>A gentle and soothing massage technique designed to reduce stress and tension, promote relaxation, and enhance overall well-being. Ideal for those looking to unwind and escape the daily grind, this massage uses long, gliding strokes to soothe tired muscles.</p>
+        </div>
+        <div class="service-card">
+            <img src="images/button_background.jpg" alt="Sports Massage">
+            <h3>Sports Massage</h3>
+            <p>Targeted towards athletes and active individuals, sports massage helps prevent injuries, improves flexibility, and speeds up recovery time. This massage focuses on the muscles and connective tissues, using techniques such as deep kneading, stretching, and joint mobilization to enhance physical performance and relieve muscle tension.</p>
+        </div>
+        <div class="service-card">
+            <img src="images/button_background.jpg" alt="Connective Tissue Massage">
+            <h3>Connective Tissue Massage</h3>
+            <p>Specialized massage that focuses on the deeper layers of muscles and connective tissues. By applying slow, firm pressure and deep strokes, it helps break up scar tissue, improve blood flow, and release chronic muscle tension, promoting flexibility and overall physical health.</p>
+        </div>
+    </div>
+</section>
+
+
+  
+
+    <!-- Обо мне -->
+<section id="about" class="about-section">
+    <h2>About Me</h2>
+    <p class="about-text">I’m Vladyslav Lanchuhov, the founder of this brand and a dedicated massage therapist. My journey in the world of massage began with training in Ukraine and Denmark, where I learned the value of combining skill with genuine care. I continuously seek to expand my knowledge and techniques, ensuring every session leaves you feeling balanced, relaxed, and revitalized. Your well-being is my passion, and I’m here to guide you on a path to harmony.</p>
+</section>
+
+    <!-- Контакты -->
+<section id="contact" class="contact-section">
+    <h2>Contact</h2>
+    
+    <!-- Контактная информация -->
+    <div class="contact-info">
+        <p>Phone: +45 2666 4453</p>
+        <p>Email: <a href="mailto:Lv@harmony-waves.net">Lv@harmony-waves.net</a></p>
+        <p>Address: Sibeliusgade 3, 2100 København</p>
+    </div>
+
+    <!-- Логотип -->
+    <div class="footer-logo">
+        <img src="images/logo.jpeg" alt="Harmony Waves Logo">
+    </div>
+</section>
+
+
+    <!-- Подвал -->
+    <footer>
+        <p>© 2024 Harmony Waves. All rights reserved.</p>
+    </footer>
+</body>
+</html>
