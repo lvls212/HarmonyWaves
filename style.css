@@ -287,6 +287,104 @@ html {
     visibility: visible;
 }
 
+/* Основные стили для мобильных устройств (экраны до 768px) */
+@media (max-width: 768px) {
+    /* Общие стили для контейнеров */
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden; /* Убираем горизонтальный скролл */
+    }
+
+    /* Стили для секций */
+    section {
+        width: 100%; /* Занимаем всю ширину экрана */
+        padding: 20px 10px; /* Отступы для удобного чтения */
+        box-sizing: border-box; /* Учитываем padding и border в ширине */
+    }
+
+    /* Заголовки */
+    h1, h2 {
+        font-size: 1.5rem; /* Оптимальный размер заголовков на мобильных */
+        text-align: center; /* Центрируем заголовки */
+        margin-bottom: 20px;
+    }
+
+    /* Логотипы и изображения */
+    .footer-logo img, .contact-info img {
+        display: block;
+        margin: 0 auto;
+        width: 80px; /* Размер логотипов на мобильных */
+        height: auto;
+    }
+
+    /* Секции "Виды массажа" */
+    .service-cards {
+        display: flex;
+        flex-direction: column; /* Размещаем карточки в столбик */
+        align-items: center; /* Центрируем карточки */
+        gap: 20px; /* Промежутки между карточками */
+    }
+
+    .service-card {
+        width: 90%; /* Устанавливаем ширину карточек */
+        max-width: 400px; /* Ограничиваем максимальную ширину */
+        background-color: #f5f5f5; /* Легкий фон для карточек */
+        border-radius: 10px; /* Скругленные углы */
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень для объема */
+        text-align: center; /* Центрируем текст внутри карточки */
+    }
+
+    /* Таблицы внутри карточек */
+    .service-card table {
+        width: 100%; /* Таблица занимает всю ширину карточки */
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .service-card table td, .service-card table th {
+        padding: 10px;
+        text-align: center; /* Центрируем текст в таблице */
+        border: 1px solid #ddd; /* Легкая граница для ячеек */
+    }
+
+    /* Кнопки бронирования */
+    .booking-button {
+        width: 90%;
+        max-width: 200px; /* Ограничиваем ширину кнопки */
+        padding: 10px 20px;
+        font-size: 1rem; /* Размер текста кнопки */
+        margin: 20px auto; /* Центрируем кнопку */
+        display: block;
+        background-color: #006994;
+        color: #fff;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+    }
+
+    .booking-button:hover {
+        background-color: #005c73;
+    }
+
+    /* Контакты и раздел "Обо мне" */
+    .contact-info, .about-text {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Отступы для логотипов внизу страницы */
+    .footer-logo {
+        margin-top: 40px;
+        text-align: center;
+    }
+}
+
 
 
 
