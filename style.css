@@ -287,15 +287,38 @@ html {
     visibility: visible;
 }
 
-/* Основные стили для мобильных устройств (экраны до 768px) */
+/* Меню для мобильных устройств (до 768px) */
 @media (max-width: 768px) {
-    /* Общие стили для контейнеров */
-    body, html {
-        margin: 0;
+    nav ul {
+        display: flex;
+        flex-wrap: wrap; /* Позволяем пунктам меню переноситься на новую строку */
+        justify-content: center; /* Центрируем меню */
         padding: 0;
-        width: 100%;
-        overflow-x: hidden; /* Убираем горизонтальный скролл */
     }
+
+    nav ul li {
+        flex: 1 1 45%; /* Делаем каждый пункт меню занимать около 45% ширины экрана */
+        margin: 10px; /* Добавляем отступы между элементами меню */
+        text-align: center; /* Центрируем текст */
+    }
+
+    nav ul li a {
+        font-size: 1.2rem; /* Сохраняем хороший размер шрифта для удобочитаемости */
+        text-decoration: none;
+        color: #006994; /* Цвет текста */
+        padding: 10px 0;
+        display: block;
+        background-color: #f5f5f5; /* Легкий фон для кнопок меню */
+        border-radius: 5px; /* Скругленные углы */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для кнопок */
+    }
+
+    nav ul li a:hover {
+        background-color: #006994;
+        color: #fff;
+    }
+}
+
 
     /* Стили для секций */
     section {
