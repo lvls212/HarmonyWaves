@@ -67,6 +67,7 @@ nav ul li a img {
     padding: 0 20px;
 }
 
+
 /* Контейнер для кнопки бронирования */
 .booking-button-container {
     position: absolute; /* Абсолютное позиционирование кнопки внутри секции */
@@ -85,7 +86,16 @@ nav ul li a img {
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
+	
 }
+/* Стили для кнопки "Букинг" */
+.booking-button {
+    position: relative; /* Относительное позиционирование */
+    top: -30px; /* Смещаем кнопку вверх на 20px */
+}
+
+
+
 
 /* Стили для кнопки при наведении */
 .booking-button:hover {
