@@ -15,52 +15,6 @@ body {
     min-height: 100vh;
 }
 
-/* Стили для кнопок меню */
-nav ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    list-style-type: none; /* Убираем маркеры списка */
-}
-
-nav ul li {
-    margin: 10px; /* Отступы между кнопками */
-}
-
-.menu-button, .booking-button {
-    display: block;
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #006994; /* Цвет кнопки */
-    color: #fff; /* Цвет текста */
-    text-align: center;
-    text-decoration: none; /* Убираем подчеркивание */
-    border-radius: 5px; /* Скругленные углы */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Легкая тень */
-    transition: background-color 0.3s ease;
-}
-
-.menu-button:hover, .booking-button:hover {
-    background-color: #005c73; /* Изменение цвета при наведении */
-}
-
-.menu-button {
-    margin: 0 5px; /* Отступы между кнопками */
-}
-
-/* Адаптивные стили для мобильных */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Меню в столбик для мобильных */
-        align-items: center;
-    }
-
-    .menu-button, .booking-button {
-        width: 90%; /* Кнопки занимают почти всю ширину */
-        margin-bottom: 10px; /* Отступы между кнопками на мобильных */
-    }
-}
 
 
 /* Навигационное меню */
@@ -169,6 +123,8 @@ nav ul li a img {
     font-size: 1.5rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Тень для текста */
     max-width: 800px; /* Ограничивает ширину абзаца для лучшей читаемости */
+	
+	
 }
 
 }
@@ -265,66 +221,65 @@ nav ul li a img {
     padding: 0 20px; /* Добавляем отступы по бокам */
 }
 
+/* Стили для кнопки Facebook */
+.social-buttons {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.social-buttons a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Круглая форма иконки */
+    transition: transform 0.3s ease;
+}
+
+.social-buttons a img:hover {
+    transform: scale(1.1); /* Эффект увеличения при наведении */
+}
+	
+
 /* Основные стили для раздела Контакты */
 #contact {
-    text-align: center;
-    padding: 40px 20px;
+    padding: 40px 20px; /* Отступы внутри секции */
+    text-align: center; /* Центрируем текст */
+    position: relative; /* Для контроля расположения элементов */
 }
 
 /* Контактная информация */
 .contact-info {
     font-size: 1.2rem;
-    margin: 20px 0;
-    text-align: center;
-}
-
+    margin-bottom: 20px; /* Добавляем отступ снизу */
+    padding: 0; /* Убираем лишние внутренние отступы */
 }
 
 /* Кнопка Facebook */
 .social-buttons {
-    margin: 40px 0; /* Отступы для кнопки */
+    margin: 20px 0; /* Отступы для кнопки */
 }
 
-.social-buttons a img {
-    width: 60px; /* Размер иконки */
-    height: 60px;
-    border-radius: 80%; /* Круглая форма иконки */
-    transition: transform 0.3s ease;
-}
-
-.social-buttons a img:hover {
-    transform: scale(1.1); /* Легкий эффект увеличения при наведении */
-}
-
-/* Логотип в разделе Контакты */
+/* Логотип */
 .footer-logo {
-    margin-top: 80px;
-}
-
-.footer-logo img {
-    width: 150px; 
-    height: 150px;
+    margin-top: 40px; /* Отступ сверху для логотипа */
+    position: relative; /* Контроль размещения */
 }
 
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
     #contact {
-        padding: 20px;
+        padding: 20px; /* Меньшие отступы на мобильных */
     }
 
     .contact-info {
-        font-size: 1rem; /* Уменьшаем шрифт для мобильных устройств */
+        font-size: 1rem; /* Уменьшение шрифта для мобильных устройств */
+        margin-bottom: 20px; /* Оставляем отступ снизу */
     }
 
-    .social-buttons a img {
-        width: 35px; /* Уменьшаем размер иконки Facebook на мобильных */
-        height: 35px;
-    }
-
-    .footer-logo img {
-        width: 80px; /* Уменьшаем логотип на мобильных */
+    .footer-logo {
+        margin-top: 30px; /* Контроль отступа сверху для логотипа */
     }
 }
+
 
 /* Плавный скролл */
 html {
