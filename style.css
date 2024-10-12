@@ -253,10 +253,45 @@ nav ul li a img {
     padding: 0; /* Убираем лишние внутренние отступы */
 }
 
-/* Кнопка Facebook */
 .social-buttons {
-    margin: 20px 0; /* Отступы для кнопки */
+  display: flex; /* Размещает кнопки в одну строку */
+  justify-content: center; 
+  gap: 15px; /* Отступ между кнопками */
 }
+
+.facebook-button, .instagram-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 40px 45px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.facebook-button {
+   /* Цвет кнопки Facebook */
+  color: white;
+}
+
+
+}
+
+.instagram-button {
+  background-color: #E4405F; /* Цвет кнопки Instagram */
+  color: white;
+}
+
+.instagram-button:hover {
+	  background-color: #C13584;
+}
+  
+}
+
+.facebook-button img, .instagram-button img {
+  margin-right: 10px;
+}
+
 
 /* Логотип */
 .footer-logo {
