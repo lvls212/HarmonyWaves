@@ -41,6 +41,20 @@ nav ul li a {
     font-size: 1.4rem; /* Увеличиваем размер шрифта */
     display: flex;
     align-items: center;
+	padding: 10px 20px; /* Добавляем внутренние отступы для кнопок */
+    background-color: #006994; /* Цвет фона для кнопок */
+    border-radius: 5px; /* Скругляем углы кнопок */
+    transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+}
+
+/* Эффект при наведении на кнопки меню */
+nav ul li a:hover {
+    background-color: #005c73; /* Цвет фона при наведении */
+}
+
+/* Дополнительные стили для активного раздела (если нужно выделить активный раздел) */
+nav ul li a.active {
+    background-color: #00485d; /* Цвет фона для активного раздела */
 }
 
 nav ul li a img {
@@ -253,11 +267,24 @@ nav ul li a img {
     padding: 0; /* Убираем лишние внутренние отступы */
 }
 
+/* Центрируем социальные кнопки */
 .social-buttons {
-  display: flex; /* Размещает кнопки в одну строку */
-  justify-content: center; 
-  gap: 15px; /* Отступ между кнопками */
+    display: flex;
+    justify-content: center; /* Центрируем кнопки */
+    gap: 20px; /* Расстояние между кнопками */
+    margin-top: 20px;
 }
+
+.social-buttons a {
+    display: inline-block;
+    text-align: center;
+}
+
+.social-buttons a img:hover {
+    transform: scale(1.1) rotate(5deg); /* Лёгкий поворот и увеличение */
+}
+
+
 
 .facebook-button, .instagram-button {
   display: inline-flex;
