@@ -7,12 +7,17 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Lora:400,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #6bbfa3;
-      --secondary: #eafaf1;
-      --accent: #b2d8c5;
-      --text: #2d3a35;
+      --primary: #6bbfd6;
+      --secondary: #eaf7fa;
+      --accent: #b2e0e6;
+      --text: #23404a;
       --white: #fff;
       --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --ocean1: #b2e0e6;
+      --ocean2: #6bbfd6;
+      --ocean3: #3a8cae;
+      --ocean4: #eaf7fa;
+      --ocean5: #d0f1f7;
     }
     * {
       box-sizing: border-box;
@@ -28,15 +33,54 @@
       background: var(--secondary);
       line-height: 1.6;
     }
+    .language-switcher {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      z-index: 20;
+      background: rgba(255,255,255,0.7);
+      border-radius: 24px;
+      padding: 0.3rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .language-switcher button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+      padding: 0.2rem 0.5rem;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .language-switcher button.active,
+    .language-switcher button:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
     header {
       position: relative;
       min-height: 100vh;
-      background: linear-gradient(rgba(60, 120, 100, 0.45), rgba(60, 120, 100, 0.45)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      background: linear-gradient(180deg, rgba(106,191,214,0.55) 0%, rgba(186,236,245,0.65) 100%), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      overflow: hidden;
+    }
+    .wave-svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      pointer-events: none;
     }
     nav {
       width: 100%;
@@ -44,7 +88,7 @@
       top: 0;
       left: 0;
       padding: 1.2rem 0;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.10);
       display: flex;
       justify-content: center;
       z-index: 10;
@@ -64,11 +108,13 @@
     .hero-content {
       margin-top: 4rem;
       color: var(--white);
-      max-width: 600px;
+      max-width: 650px;
       animation: fadeIn 1.2s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
+      z-index: 3;
+      position: relative;
     }
     .hero-content h1 {
       font-family: 'Lora', serif;
@@ -83,16 +129,9 @@
       margin-bottom: 2.2rem;
       text-shadow: 0 2px 8px rgba(0,0,0,0.10);
     }
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-    }
     .hero-content a.hero-btn {
       display: inline-block;
-      background: var(--primary);
+      background: linear-gradient(90deg, var(--ocean2) 0%, var(--ocean1) 100%);
       color: var(--white);
       padding: 0.9rem 2.2rem;
       border-radius: 30px;
@@ -102,10 +141,11 @@
       box-shadow: var(--shadow);
       transition: background 0.2s, color 0.2s;
       margin-bottom: 0.5rem;
+      border: none;
     }
     .hero-content a.hero-btn:hover {
-      background: var(--accent);
-      color: var(--text);
+      background: linear-gradient(90deg, var(--ocean3) 0%, var(--ocean2) 100%);
+      color: var(--white);
     }
     section {
       padding: 3.5rem 1.2rem;
@@ -122,7 +162,7 @@
     h2 {
       font-family: 'Lora', serif;
       font-size: 2rem;
-      color: var(--primary);
+      color: var(--ocean3);
       margin-bottom: 1.2rem;
       text-align: center;
       font-weight: 700;
@@ -132,7 +172,7 @@
       max-width: 700px;
       margin: 0 auto;
       text-align: center;
-      color: #3d4d44;
+      color: #2d4d5a;
     }
     .services-list {
       display: flex;
@@ -142,7 +182,7 @@
       margin-top: 2rem;
     }
     .service-card {
-      background: var(--white);
+      background: linear-gradient(135deg, var(--ocean4) 60%, var(--ocean1) 100%);
       border-radius: 18px;
       box-shadow: var(--shadow);
       padding: 2rem 1.5rem;
@@ -151,20 +191,22 @@
       min-width: 200px;
       text-align: center;
       transition: transform 0.2s;
+      border: 1.5px solid var(--ocean1);
     }
     .service-card:hover {
       transform: translateY(-6px) scale(1.03);
+      border-color: var(--ocean3);
     }
     .service-card h3 {
       font-family: 'Lora', serif;
-      color: var(--primary);
+      color: var(--ocean2);
       font-size: 1.2rem;
       margin-bottom: 0.7rem;
       font-weight: 700;
     }
     .service-card p {
       font-size: 1rem;
-      color: #4a5c53;
+      color: #2d4d5a;
     }
     .testimonials-list {
       display: flex;
@@ -174,18 +216,19 @@
       align-items: center;
     }
     .testimonial {
-      background: var(--accent);
+      background: linear-gradient(90deg, var(--ocean1) 0%, var(--ocean4) 100%);
       border-radius: 16px;
       padding: 1.5rem 1.2rem;
       max-width: 500px;
       box-shadow: var(--shadow);
       position: relative;
       font-size: 1.05rem;
+      border: 1.5px solid var(--ocean1);
     }
     .testimonial:before {
       content: "“";
       font-size: 2.5rem;
-      color: var(--primary);
+      color: var(--ocean2);
       position: absolute;
       left: 18px;
       top: 8px;
@@ -195,7 +238,7 @@
       display: block;
       margin-top: 1rem;
       font-weight: 700;
-      color: #3d4d44;
+      color: #2d4d5a;
       font-size: 1rem;
       font-family: 'Montserrat', sans-serif;
       letter-spacing: 1px;
@@ -210,16 +253,17 @@
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
+      border: 1.5px solid var(--ocean1);
     }
     .contact-form label {
       font-weight: 600;
-      color: var(--primary);
+      color: var(--ocean2);
       margin-bottom: 0.3rem;
       font-size: 1rem;
     }
     .contact-form input,
     .contact-form textarea {
-      border: 1px solid #cbe7db;
+      border: 1px solid #b2e0e6;
       border-radius: 8px;
       padding: 0.8rem;
       font-size: 1rem;
@@ -230,11 +274,11 @@
     }
     .contact-form input:focus,
     .contact-form textarea:focus {
-      border: 1.5px solid var(--primary);
+      border: 1.5px solid var(--ocean2);
       outline: none;
     }
     .contact-form button {
-      background: var(--primary);
+      background: linear-gradient(90deg, var(--ocean2) 0%, var(--ocean1) 100%);
       color: var(--white);
       border: none;
       border-radius: 30px;
@@ -246,8 +290,19 @@
       transition: background 0.2s;
     }
     .contact-form button:hover {
-      background: var(--accent);
-      color: var(--text);
+      background: linear-gradient(90deg, var(--ocean3) 0%, var(--ocean2) 100%);
+      color: var(--white);
+    }
+    .form-message {
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      color: var(--ocean3);
+      font-weight: 600;
+      display: none;
+    }
+    .form-message.error {
+      color: #e1306c;
     }
     .instagram-section {
       padding: 2.5rem 1.2rem 1.5rem 1.2rem;
@@ -261,7 +316,7 @@
     }
     .instagram-section h3 {
       font-family: 'Lora', serif;
-      color: var(--primary);
+      color: var(--ocean2);
       font-size: 1.3rem;
       margin-bottom: 1rem;
       font-weight: 700;
@@ -271,7 +326,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: var(--primary);
+      color: var(--ocean2);
       font-weight: 700;
       font-size: 1.1rem;
       text-decoration: none;
@@ -331,6 +386,12 @@
       .instagram-section {
         padding: 1.5rem 0.7rem 1rem 0.7rem;
       }
+      .language-switcher {
+        right: 0.5rem;
+        top: 0.5rem;
+        font-size: 0.95rem;
+        padding: 0.2rem 0.7rem;
+      }
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(40px);}
@@ -339,6 +400,10 @@
   </style>
 </head>
 <body>
+  <div class="language-switcher">
+    <button id="en-btn" class="active" aria-label="Switch to English">🇬🇧 EN</button> /
+    <button id="da-btn" aria-label="Switch to Danish">🇩🇰 DA</button>
+  </div>
   <header>
     <nav>
       <a href="#about">About</a>
@@ -347,76 +412,153 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="hero-content">
-      <h1>Harmony Waves Massage Studio</h1>
-      <p>Experience tranquility and rejuvenation with our nature-inspired massage therapies. Your journey to harmony begins here.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="hero-btn">Book Your Session</a>
-        <a href="https://harmony-waves.planway.com" class="hero-btn" target="_blank" rel="noopener">Book Time</a>
+      <div class="lang lang-en">
+        <h1>Harmony Waves Massage Studio</h1>
+        <p>Experience the soothing embrace of the ocean. Let gentle waves of touch restore your balance and bring you peace.</p>
+        <a href="https://harmony-waves.planway.com" class="hero-btn" target="_blank" rel="noopener">Book Your Session</a>
+      </div>
+      <div class="lang lang-da" style="display:none;">
+        <h1>Harmony Waves Massage Studio</h1>
+        <p>Oplev havets beroligende omfavnelse. Lad blide bølger af berøring genoprette din balance og give dig ro.</p>
+        <a href="https://harmony-waves.planway.com" class="hero-btn" target="_blank" rel="noopener">Book din tid</a>
       </div>
     </div>
+    <svg class="wave-svg" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#eaf7fa"/>
+      <path d="M0,90 C480,150 960,30 1440,90 L1440,120 L0,120 Z" fill="#b2e0e6" opacity="0.5"/>
+    </svg>
   </header>
 
   <section id="about">
-    <h2>About Us</h2>
-    <div class="about-text">
-      At Harmony Waves, we believe in the healing power of touch and the serenity of nature. Our certified therapists blend modern techniques with a calming, nature-inspired atmosphere to help you unwind, restore balance, and nurture your well-being. Step into our studio and let the gentle waves of relaxation wash over you.
+    <div class="lang lang-en">
+      <h2>About</h2>
+      <div class="about-text">
+        Welcome to Harmony Waves, where the ocean's calm inspires every session. As your dedicated massage therapist, I blend flowing techniques and mindful presence to create a sanctuary for your body and mind. Each treatment is tailored to your unique needs, inviting you to drift into deep relaxation and reconnect with your inner harmony.
+      </div>
+    </div>
+    <div class="lang lang-da" style="display:none;">
+      <h2>Om</h2>
+      <div class="about-text">
+        Velkommen til Harmony Waves, hvor havets ro inspirerer hver behandling. Som din dedikerede massør skaber jeg et fristed for krop og sind med bløde, flydende teknikker og nærvær. Hver session tilpasses dine behov, så du kan give slip, finde dyb afslapning og genoprette din indre harmoni.
+      </div>
     </div>
   </section>
 
   <section id="services">
-    <h2>Our Services</h2>
-    <div class="services-list">
-      <div class="service-card">
-        <h3>Swedish Massage</h3>
-        <p>Relax your body and mind with gentle, flowing strokes that ease tension and promote deep relaxation.</p>
+    <div class="lang lang-en">
+      <h2>Massage Services</h2>
+      <div class="services-list">
+        <div class="service-card">
+          <h3>Relaxing Massage</h3>
+          <p>A gentle full-body experience designed to melt away stress and invite tranquility. Flowing strokes and mindful touch create a serene escape, allowing you to unwind and restore your natural balance.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sports Massage</h3>
+          <p>Focused techniques tailored to active bodies, supporting recovery and preventing tension. This revitalizing massage helps you move freely, feel energized, and maintain your peak performance.</p>
+        </div>
+        <div class="service-card">
+          <h3>Connective Tissue Massage</h3>
+          <p>Deep fascial work and gentle cupping methods restore mobility and release restrictions. Experience a sense of openness and ease as your body regains its natural flow.</p>
+        </div>
+        <div class="service-card">
+          <h3>Ocean Release</h3>
+          <p>Our signature whole-body flow, inspired by the rhythm of the sea. Special focus on facial massage with gua sha and jade stones brings a wave of renewal, leaving you glowing and deeply relaxed.</p>
+        </div>
       </div>
-      <div class="service-card">
-        <h3>Deep Tissue Massage</h3>
-        <p>Target chronic muscle tension and knots with focused, therapeutic pressure for lasting relief.</p>
-      </div>
-      <div class="service-card">
-        <h3>Aromatherapy</h3>
-        <p>Enhance your massage with soothing essential oils, carefully selected to calm, energize, or uplift your spirit.</p>
-      </div>
-      <div class="service-card">
-        <h3>Hot Stone Therapy</h3>
-        <p>Warm stones melt away stress and improve circulation, leaving you feeling balanced and renewed.</p>
+    </div>
+    <div class="lang lang-da" style="display:none;">
+      <h2>Massagebehandlinger</h2>
+      <div class="services-list">
+        <div class="service-card">
+          <h3>Afslappende Massage</h3>
+          <p>En blid helkropsoplevelse, der smelter stress væk og inviterer til ro. Flydende strøg og nærværende berøring skaber et fredfyldt frirum, hvor du kan slappe af og genfinde balancen.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sportsmassage</h3>
+          <p>Fokuserede teknikker til den aktive krop, der støtter restitution og forebygger spændinger. En vitaliserende massage, der giver dig frihed i bevægelsen og ny energi.</p>
+        </div>
+        <div class="service-card">
+          <h3>Bindevævsmassage</h3>
+          <p>Dybtgående arbejde med fascier og blid cupping løsner op og genskaber bevægelighed. Oplev lethed og frihed, når kroppen får sit naturlige flow tilbage.</p>
+        </div>
+        <div class="service-card">
+          <h3>Ocean Release</h3>
+          <p>Signaturbehandling inspireret af havets rytme. Særligt fokus på ansigtsmassage med gua sha og jadesten giver fornyelse, glød og dyb afslapning.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="testimonials">
-    <h2>Testimonials</h2>
-    <div class="testimonials-list">
-      <div class="testimonial">
-        The atmosphere is so peaceful and the therapists are truly gifted. I always leave feeling refreshed and centered.
-        <span class="author">– Emily R.</span>
+    <div class="lang lang-en">
+      <h2>Testimonials</h2>
+      <div class="testimonials-list">
+        <div class="testimonial">
+          The atmosphere is peaceful and every session feels like a gentle journey back to myself. I always leave feeling lighter and more at ease.
+          <span class="author">– Emily R.</span>
+        </div>
+        <div class="testimonial">
+          Harmony Waves is my sanctuary. The therapist’s care and attention are truly special. Highly recommended!
+          <span class="author">– Mark T.</span>
+        </div>
+        <div class="testimonial">
+          From the calming scents to the flowing massage, every visit is a blissful escape. Thank you for your wonderful service!
+          <span class="author">– Priya S.</span>
+        </div>
       </div>
-      <div class="testimonial">
-        Harmony Waves is my sanctuary. The attention to detail and care is unmatched. Highly recommended!
-        <span class="author">– Mark T.</span>
-      </div>
-      <div class="testimonial">
-        From the calming scents to the gentle music, every visit is a blissful escape. Thank you for your wonderful service!
-        <span class="author">– Priya S.</span>
+    </div>
+    <div class="lang lang-da" style="display:none;">
+      <h2>Udtalelser</h2>
+      <div class="testimonials-list">
+        <div class="testimonial">
+          Stemningen er rolig, og hver behandling føles som en blid rejse hjem til mig selv. Jeg går altid derfra med lethed og ro.
+          <span class="author">– Emily R.</span>
+        </div>
+        <div class="testimonial">
+          Harmony Waves er mit fristed. Massørens omsorg og nærvær er noget helt særligt. Kan varmt anbefales!
+          <span class="author">– Mark T.</span>
+        </div>
+        <div class="testimonial">
+          Fra de beroligende dufte til den flydende massage er hvert besøg en vidunderlig pause. Tak for en fantastisk oplevelse!
+          <span class="author">– Priya S.</span>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact Us</h2>
-    <form class="contact-form" autocomplete="off">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required maxlength="50">
+    <div class="lang lang-en">
+      <h2>Contact</h2>
+      <form class="contact-form" id="contactForm" novalidate>
+        <label for="name-en">Name</label>
+        <input type="text" id="name-en" name="name" required maxlength="50" autocomplete="name" placeholder="Your name">
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required maxlength="50">
+        <label for="email-en">Email</label>
+        <input type="email" id="email-en" name="email" required maxlength="50" autocomplete="email" placeholder="you@email.com">
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" required maxlength="500"></textarea>
+        <label for="message-en">Message</label>
+        <textarea id="message-en" name="message" rows="4" required maxlength="500" placeholder="How can I help you?"></textarea>
 
-      <button type="submit">Send Message</button>
-    </form>
+        <button type="submit">Send Message</button>
+        <div class="form-message" id="formMessage-en"></div>
+      </form>
+    </div>
+    <div class="lang lang-da" style="display:none;">
+      <h2>Kontakt</h2>
+      <form class="contact-form" id="contactForm-da" novalidate>
+        <label for="name-da">Navn</label>
+        <input type="text" id="name-da" name="name" required maxlength="50" autocomplete="name" placeholder="Dit navn">
+
+        <label for="email-da">Email</label>
+        <input type="email" id="email-da" name="email" required maxlength="50" autocomplete="email" placeholder="din@email.com">
+
+        <label for="message-da">Besked</label>
+        <textarea id="message-da" name="message" rows="4" required maxlength="500" placeholder="Hvordan kan jeg hjælpe dig?"></textarea>
+
+        <button type="submit">Send besked</button>
+        <div class="form-message" id="formMessage-da"></div>
+      </form>
+    </div>
   </section>
 
   <div class="instagram-section">
@@ -431,7 +573,6 @@
       @harmonywaves.dk
     </a>
     <div class="instagram-embed">
-      <!-- Instagram embed: Replace with your own post if desired -->
       <iframe src="https://www.instagram.com/harmonywaves.dk/embed" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" style="border:none;overflow:hidden;min-height:340px;"></iframe>
     </div>
   </div>
@@ -441,6 +582,30 @@
   </footer>
 
   <script>
+    // Language Switcher
+    const enBtn = document.getElementById('en-btn');
+    const daBtn = document.getElementById('da-btn');
+    const langEn = document.querySelectorAll('.lang-en');
+    const langDa = document.querySelectorAll('.lang-da');
+
+    function showLang(lang) {
+      if (lang === 'en') {
+        langEn.forEach(el => el.style.display = '');
+        langDa.forEach(el => el.style.display = 'none');
+        enBtn.classList.add('active');
+        daBtn.classList.remove('active');
+        document.documentElement.lang = 'en';
+      } else {
+        langEn.forEach(el => el.style.display = 'none');
+        langDa.forEach(el => el.style.display = '');
+        enBtn.classList.remove('active');
+        daBtn.classList.add('active');
+        document.documentElement.lang = 'da';
+      }
+    }
+    enBtn.addEventListener('click', () => showLang('en'));
+    daBtn.addEventListener('click', () => showLang('da'));
+
     // Smooth scroll for nav links
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -466,12 +631,53 @@
     window.addEventListener('scroll', revealSections);
     window.addEventListener('load', revealSections);
 
-    // Prevent form submission (no backend)
-    document.querySelector('.contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      this.reset();
-      alert('Thank you for reaching out! We will get back to you soon.');
-    });
+    // Contact Form Validation and Integration-ready Logic
+    function validateEmail(email) {
+      // Simple email regex
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function handleForm(formId, messageId, lang) {
+      const form = document.getElementById(formId);
+      const messageDiv = document.getElementById(messageId);
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        messageDiv.style.display = 'none';
+        messageDiv.classList.remove('error');
+        let name = form.querySelector('input[name="name"]').value.trim();
+        let email = form.querySelector('input[name="email"]').value.trim();
+        let message = form.querySelector('textarea[name="message"]').value.trim();
+
+        let error = '';
+        if (!name) error = lang === 'en' ? 'Please enter your name.' : 'Indtast venligst dit navn.';
+        else if (!email) error = lang === 'en' ? 'Please enter your email.' : 'Indtast venligst din email.';
+        else if (!validateEmail(email)) error = lang === 'en' ? 'Please enter a valid email address.' : 'Indtast venligst en gyldig email.';
+        else if (!message) error = lang === 'en' ? 'Please enter your message.' : 'Skriv venligst en besked.';
+
+        if (error) {
+          messageDiv.textContent = error;
+          messageDiv.classList.add('error');
+          messageDiv.style.display = 'block';
+          return;
+        }
+
+        // Integration-ready: send email to info@harmonywaves.dk
+        // Example: Use fetch to POST to your backend endpoint here
+        // fetch('/api/send-email', { ... })
+
+        // For now, just show a success message
+        messageDiv.textContent = lang === 'en'
+          ? 'Thank you for your message! I will get back to you soon.'
+          : 'Tak for din besked! Jeg vender tilbage hurtigst muligt.';
+        messageDiv.classList.remove('error');
+        messageDiv.style.display = 'block';
+        form.reset();
+      });
+    }
+
+    handleForm('contactForm', 'formMessage-en', 'en');
+    handleForm('contactForm-da', 'formMessage-da', 'da');
   </script>
 </body>
 </html>
