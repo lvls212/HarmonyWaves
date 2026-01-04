@@ -564,14 +564,6 @@
     }
   </style>
 </head>
-  <script>
-document.querySelectorAll('.faq-item').forEach(item => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('active');
-  });
-});
-</script>
-
 <body>
   <div class="language-switcher">
     <button id="en-btn" class="active" aria-label="Switch to English">EN</button> /
@@ -992,9 +984,16 @@ document.querySelectorAll('.faq-item').forEach(item => {
     scrollBtn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  </script>
+    <script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
+});
+</script>
 </body>
 </html>
+
 
 
 
