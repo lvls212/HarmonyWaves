@@ -564,6 +564,14 @@
     }
   </style>
 </head>
+  <script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
+});
+</script>
+
 <body>
   <div class="language-switcher">
     <button id="en-btn" class="active" aria-label="Switch to English">EN</button> /
@@ -760,70 +768,120 @@
       <iframe src="https://www.instagram.com/harmonywaves.dk/embed" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" style="border:none;overflow:hidden;min-height:340px;"></iframe>
     </div>
   </div>
-  <section id="faq" style="max-width:900px;margin:0 auto;padding:3rem 1.2rem;">
+ <section id="faq" style="max-width:900px;margin:0 auto;padding:3rem 1.2rem;">
   <h2 style="text-align:center;margin-bottom:2rem;">Frequently Asked Questions</h2>
 
-  <h3>What types of massage do you offer?</h3>
-  <p>
-    At Harmony Waves, you can choose between Relaxing Massage, Sports Massage, Deep Tissue / Connective Tissue work, and our signature Ocean Release treatment. 
-    Each session is tailored to your body’s condition and your desired outcome.
-  </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>What types of massage do you offer?</span>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-answer">
+      At Harmony Waves, you can choose between Relaxing Massage, Sports Massage, Deep Tissue /
+      Connective Tissue work, and our signature Ocean Release treatment. Each session is tailored to
+      your body's condition and goals.
+    </div>
+  </div>
 
-  <h3>How do I know which massage is right for me?</h3>
-  <p>
-    If you want stress relief and a calming experience, choose Relaxing Massage.  
-    For muscle tightness, soreness, or sports-related tension, Sports Massage or Deep Tissue is ideal.  
-    Ocean Release is perfect if you want a full-body flow with special focus on facial rejuvenation.
-  </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>How do I know which massage is right for me?</span>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-answer">
+      For stress and calming — choose Relaxing Massage.<br>
+      For soreness, tightness and recovery — choose Sports or Deep Tissue.<br>
+      For a full-body flow with facial rejuvenation — choose Ocean Release.
+    </div>
+  </div>
 
-  <h3>Where is your massage studio located?</h3>
-  <p>
-    We are located in the heart of Frederiksberg at <strong>Godthåbsvej 109A, 2000 Frederiksberg</strong>, inside Beauty Bar MoonLight.  
-    The studio is easily accessible by bus, bike, and car.
-  </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Where is your massage studio located?</span>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-answer">
+      We are located at <strong>Godthåbsvej 109A, 2000 Frederiksberg</strong>, inside Beauty Bar MoonLight.
+      Easy access by bus, bike and car.
+    </div>
+  </div>
 
-  <h3>Is there parking nearby?</h3>
-  <p>
-    Yes, there is paid street parking available directly on Godthåbsvej and the surrounding streets.
-    Most clients find parking within 1–3 minutes walking distance.
-  </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Is there parking nearby?</span>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-answer">
+      Yes, there is paid street parking on Godthåbsvej and the surrounding streets. Most clients find
+      parking within 1–3 minutes walking distance.
+    </div>
+  </div>
 
-  <h3>How long does a session last?</h3>
-  <p>
-    Most treatments are 60 or 90 minutes.  
-    90-minute sessions provide deeper relaxation and more time to work on specific areas.
-  </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>How long does a session last?</span>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-answer">
+      Most treatments are 60 or 90 minutes. 90-minute sessions allow deeper work and more relaxation.
+    </div>
+  </div>
 
-  <h3>Do you offer gift cards?</h3>
-  <p>
-    Yes. Many clients purchase Harmony Waves gift cards for birthdays, holidays, or special occasions.  
-    Just message me or use the booking link to arrange one.
-  </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Do you offer gift cards?</span>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-answer">
+      Yes — gift cards are available for any occasion. You can contact me or order one via the booking link.
+    </div>
+  </div>
 
-  <h3>Can I book online?</h3>
-  <p>
-    Absolutely. You can book your appointment 24/7 through our secure booking page:
-    <a href="https://harmony-waves.planway.com" target="_blank" rel="noopener">Planway – Harmony Waves</a>.
-  </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Can I book online?</span>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-answer">
+      Absolutely — booking is available 24/7 through our Planway system.
+    </div>
+  </div>
 
-  <h3>What should I expect during my first visit?</h3>
-  <p>
-    Before the session, we discuss your goals, tension areas, preferred pressure, and any injuries.  
-    You will always be guided through the process so you feel comfortable and relaxed.
-  </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>What should I expect during my first visit?</span>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-answer">
+      We will talk about your needs, tension areas, preferred pressure and any injuries. You will be
+      guided throughout the session so you feel safe and relaxed.
+    </div>
+  </div>
 
-  <h3>Do you work with athletes or people with chronic tension?</h3>
-  <p>
-    Yes. Many clients come for sports recovery, posture-related tension, back and neck stress, and improved mobility.  
-    Sessions are adapted for both beginners and experienced athletes.
-  </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Do you work with athletes or chronic tension?</span>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-answer">
+      Yes — many clients come for sports recovery, posture-related tension, and back/neck tightness.
+      Treatments are adapted individually.
+    </div>
+  </div>
 
-  <h3>Are there any contraindications?</h3>
-  <p>
-    If you have acute inflammation, fever, recent surgery, or severe cardiovascular conditions, massage may not be recommended.
-    If you are unsure, feel free to ask before booking.
-  </p>
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Are there any contraindications?</span>
+      <span class="faq-arrow">▼</span>
+    </div>
+    <div class="faq-answer">
+      Massage may not be recommended if you have fever, acute inflammation, recent surgery or severe
+      cardiovascular conditions. If unsure — feel free to ask.
+    </div>
+  </div>
+
 </section>
+
 
   <footer>
     &copy; 2025 Harmony Waves Massage Studio. All rights reserved.
@@ -937,6 +995,7 @@
   </script>
 </body>
 </html>
+
 
 
 
