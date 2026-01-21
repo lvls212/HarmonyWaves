@@ -913,7 +913,7 @@ Efterlader kroppen afspændt og sindet løftet med en naturlig glød.</p>
   <section id="contact">
     <div class="lang lang-en">
       <h2>Contact</h2>
-      <form class="contact-form" id="contactForm" novalidate>
+     <form class="contact-form" id="contactForm" method="POST" action="https://formsubmit.co/info@harmonywaves.dk">
         <label for="name-en">Name</label>
         <input type="text" id="name-en" name="name" required maxlength="50" autocomplete="name" placeholder="Your name">
         <label for="email-en">Email</label>
@@ -931,7 +931,7 @@ Efterlader kroppen afspændt og sindet løftet med en naturlig glød.</p>
     </div>
     <div class="lang lang-da" style="display:none;">
       <h2>Kontakt</h2>
-      <form class="contact-form" id="contactForm-da" novalidate>
+      <form class="contact-form" id="contactForm-da" method="POST" action="https://formsubmit.co/info@harmonywaves.dk">
         <label for="name-da">Navn</label>
         <input type="text" id="name-da" name="name" required maxlength="50" autocomplete="name" placeholder="Dit navn">
         <label for="email-da">Email</label>
@@ -1244,44 +1244,6 @@ Efterlader kroppen afspændt og sindet løftet med en naturlig glød.</p>
     };
     window.addEventListener('scroll', revealSections);
     window.addEventListener('load', revealSections);
-    // Contact Form Validation and Integration-ready Logic
-    function validateEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-    function handleForm(formId, messageId, lang) {
-      const form = document.getElementById(formId);
-      const messageDiv = document.getElementById(messageId);
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        messageDiv.style.display = 'none';
-        messageDiv.classList.remove('error');
-        let name = form.querySelector('input[name="name"]').value.trim();
-        let email = form.querySelector('input[name="email"]').value.trim();
-        let message = form.querySelector('textarea[name="message"]').value.trim();
-        let error = '';
-        if (!name) error = lang === 'en' ? 'Please enter your name.' : 'Indtast venligst dit navn.';
-        else if (!email) error = lang === 'en' ? 'Please enter your email.' : 'Indtast venligst din email.';
-        else if (!validateEmail(email)) error = lang === 'en' ? 'Please enter a valid email address.' : 'Indtast venligst en gyldig email.';
-        else if (!message) error = lang === 'en' ? 'Please enter your message.' : 'Skriv venligst en besked.';
-        if (error) {
-          messageDiv.textContent = error;
-          messageDiv.classList.add('error');
-          messageDiv.style.display = 'block';
-          return;
-        }
-        // Integration-ready: send email to info@harmonywaves.dk
-        // Example: Use fetch to POST to your backend endpoint here
-        // For now, just show a success message
-        messageDiv.textContent = lang === 'en'
-          ? 'Thank you for your message! I will get back to you soon.'
-          : 'Tak for din besked! Jeg vender tilbage hurtigst muligt.';
-        messageDiv.classList.remove('error');
-        messageDiv.style.display = 'block';
-        form.reset();
-      });
-    }
-    handleForm('contactForm', 'formMessage-en', 'en');
-    handleForm('contactForm-da', 'formMessage-da', 'da');
     // Scroll to Top Button Logic
     const scrollBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', function() {
@@ -1306,6 +1268,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
 </body>
 </html>
+
 
 
 
